@@ -1,2 +1,2 @@
-# product_listing_page
+# Product Listing Page
 A page showing product listings.
