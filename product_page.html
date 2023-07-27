@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 0;
+            margin:0;
+        }
+
+        header div.menu {
+            background-color: white;
+            width:100%;
+            height: 10vh;
+            position:fixed;
+            top:0;
+            padding:.5rem 0;
+            height: fit-content;
+        }
+
+        header div.menu ul {
+            list-style: none;
+            display: block;
+            background:white;
+            text-align: center;
+        }
+
+        header div.menu ul li {
+            display: inline;
+            margin:0 2rem;
+            margin-left: 0rem;
+            color:black;
+            cursor: pointer;
+            background-color: white;
+            height:100%;
+            padding:1rem;
+            font-weight: bold;
+        }
+
+        header div.menu ul li:hover {
+            background-color: #1b821b;
+            border-bottom:5px solid yellow;
+            color:white !important;
+            transition: background-color border .5s ease-in-out;
+        }
+
+        header div.menu ul li.active {
+            border-bottom:5px solid yellow;
+            color:#1b821b;
+        }
+
+        header div.banner {
+            background:url("./images/pexels-igor-ovsyannykov-205961.jpg") no-repeat center;
+            margin-top:5vh;
+        }
+
+        header div.banner h1 {
+            color:white;
+            text-align:center;
+            font-size: 3rem;
+            padding: 2rem 1rem;
+            margin:0;
+        }
+
+        div.main {
+            width:100%;
+            margin:0;
+            padding:0;
+            height: fit-content;
+        }
+
+        div.main div.aside {
+            margin:0;
+            width:20%;
+            float:left;
+            height:100vh;
+            background-color: blue;
+        }
+
+        div.main div.card {
+            margin:0;
+            width:80%;
+            float:right;
+            height:100vh;
+            background-color:green;
+        }
+
+        footer.footer {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <ul>
+                <li class="active">All products</li>
+                <li>Fashion</li>
+                <li>Electronics</li>
+                <li>Kitchen Utensils</li>
+                <li>DIY</li>
+            </ul>
+        </div>
+        <div class="banner">
+            <h1>All Products</h1>
+        </div>
+    </header>
+    <div class="main">
+        <div class="aside">
+            
+        </div>
+        <div class="card">
+
+        </div>
+        <br style="clear: both"/>
+    </div>
+    <footer class="footer">
+        
+    </footer>
+</body>
+</html>
