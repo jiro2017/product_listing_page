@@ -59,7 +59,7 @@
 
         header div.banner {
             background:url("./images/pexels-igor-ovsyannykov-205961.jpg") no-repeat center;
-            margin-top:5vh;
+            margin-top:10vh;
         }
 
         header div.banner h1 {
@@ -74,23 +74,89 @@
             width:100%;
             margin:0;
             padding:0;
-            height: fit-content;
+            min-height:100vh;
+            /* height: fit-content; */
         }
 
         div.main div.aside {
             margin:0;
             width:20%;
             float:left;
-            height:100vh;
-            background-color: blue;
+            min-height:100vh;
+            /* background-color: blue; */
         }
 
-        div.main div.card {
+        div.main div.aside section.price, div.main div.aside section.category {
+            margin:10px;
+            margin-bottom:20px;
+            /* border-top:3px solid black; */
+        }
+
+        div.main div.aside section.price h3.title, div.main div.aside section.category h3.title {
+            margin-top:0px;
+            margin-bottom:10px;
+            border-bottom:3px solid black;
+        }
+
+        div.main div.products {
             margin:0;
             width:80%;
             float:right;
-            height:100vh;
-            background-color:green;
+            min-height:100vh;
+            /* background-color:green; */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows:auto;
+            justify-content: space-evenly;
+        }
+
+        div.main div.products div.card {
+            width:300px;
+            height:500px;
+            margin:.5rem 0;
+            margin-left:2rem;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            /* display: inline-block; */
+            /* margin:auto; */
+        }
+
+        div.main div.products div.card div.image {
+            height:80%;
+            width:100%;
+            background:red;
+        }
+
+        div.main div.products div.card div.image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        div.main div.products div.card div.details {
+            height:20%;
+            width:100%;
+            background:white;
+            overflow:hidden; /** gives the details div a height since the child elements are using float css property **/
+        }
+
+        div.main div.products div.card div.details div.left {
+            width:80%;
+            float:left;
+            padding: .5rem;
+        }
+
+        div.main div.products div.card div.details div.left h1.title {
+            font-size:1.5rem;
+            margin-bottom:.5rem;
+        }
+
+        div.main div.products div.card div.details div.left p.description {
+            font-size:1rem;
+            margin-top:0rem;
+        }
+
+        div.main div.products div.card div.details div.right {
+            width:20%;
+            float: right;
         }
 
         footer.footer {
@@ -115,11 +181,118 @@
     </header>
     <div class="main">
         <div class="aside">
-            
+            <section class="price">
+                <h3 class="title">Sort By Price</h3>
+                <form action="" method="post">
+                    <div class="wrapper 50-100">
+                       <input type="checkbox" name="50-100" id="50-100"> 
+                       <label for="50-100">$50 - $100</label>  
+                    </div>
+                    <div class="wrapper 100-200">
+                        <input type="checkbox" name="100-200" id="100-200">
+                        <label for="100-200">$100 - $200</label>
+                    </div>
+                    <div class="wrapper 200-300">
+                        <input type="checkbox" name="200-300" id="200-300">
+                        <label for="200-300">$200 - $300</label>
+                    </div>
+                </form>
+            </section>
+            <section class="category">
+                <h3 class="title">Sort By category</h3>
+                <form action="" method="post">
+                    <div class="wrapper just-arrived">
+                        <input type="checkbox" name="just-arrived" id="just-arrived">
+                        <label for="just-arrived">Just Arrived</label>
+                        
+                    </div>
+                    <div class="wrapper clearance">
+                        <input type="checkbox" name="clearance" id="clearance">
+                        <label for="clearance">Clearance</label>
+                        
+                    </div>
+                    <div class="wrapper pre-sale">
+                        <input type="checkbox" name="pre-sale" id="pre-sale">
+                        <label for="pre-sale">Pre Sale</label>
+                        
+                    </div>
+                </form>
+            </section>
         </div>
-        <div class="card">
+        <div class="products">
+            <div class="card">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="details">
+                    <div class="left">
+                        <h1 class="title">New Product</h1>
+                        <p class="description">$2.50</p>
+                    </div>
+                    <div class="right">
+                        <i class="fa-solid fa-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="details">
+                    <div class="left">
+                        <h1 class="title">New Product</h1>
+                        <p class="description">$2.50</p>
+                    </div>
+                    <div class="right">
+                        <i class="fa-solid fa-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="details">
+                    <div class="left">
+                        <h1 class="title">New Product</h1>
+                        <p class="description">$2.50</p>
+                    </div>
+                    <div class="right">
+                        <i class="fa-solid fa-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="details">
+                    <div class="left">
+                        <h1 class="title">New Product</h1>
+                        <p class="description">$2.50</p>
+                    </div>
+                    <div class="right">
+                        <i class="fa-solid fa-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="" alt="">
+                </div>
+                <div class="details">
+                    <div class="left">
+                        <h1 class="title">New Product</h1>
+                        <p class="description">$2.50</p>
+                    </div>
+                    <div class="right">
+                        <i class="fa-solid fa-cart"></i>
+                    </div>
+                </div>
+            </div>
 
         </div>
+        
         <br style="clear: both"/>
     </div>
     <footer class="footer">
