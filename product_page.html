@@ -134,11 +134,13 @@
         div.main div.products div.card div.image {
             height:80%;
             width:100%;
-            background:red;
+            padding:.5rem;
+            /* background: #f1f1f1; */
+            /* background:red; */
         }
 
         div.main div.products div.card div.image img {
-            width: 100%;
+            width: 95%;
             height: 100%;
         }
 
@@ -157,7 +159,7 @@
         }
 
         div.main div.products div.card div.details div.left h1.title {
-            font-size:1.5rem;
+            font-size:1.2rem;
             margin-bottom:.5rem;
         }
 
@@ -254,6 +256,101 @@
             </section>
         </div>
         <div class="products">
+<script>
+    const products = {
+        "Kitchen Utensils": [
+            {
+                "name":"4 cooktop Induction cooker",
+                "price":"70.00",
+                "image_url":"./product_images/4 cooktop Induction cooker.jpg",
+            },
+            {
+                "name":"3600w Dual Induction Cooktop",
+                "price":"170.00",
+                "image_url":"./product_images/3600w Dual Induction Cooktop.jpg",
+            },
+            {
+                "name":"Glass Cups 7pcs",
+                "price":"170.00",
+                "image_url":"./product_images/pexels-anna-shvets-5760844.jpg",
+            },
+            {
+                "name":"Ceramic bowls 4pcs",
+                "price":"170.00",
+                "image_url":"./product_images/pexels-charlotte-may-5825374.jpg",
+            }
+        ],
+        "Fashion" : [
+            {
+                "name":"Fabian Rubilar Jacktet",
+                "price":"30.00",
+                "image_url":"./product_images/pexels-fabian-rubilar-16453878.jpg",
+            },
+            {
+                "name":"Melvin Buezo Running",
+                "price":"50.00",
+                "image_url":"./product_images/pexels-melvin-buezo-2529148.jpg",
+            },
+            {
+                "name":"Melvin Buezo Dunk",
+                "price":"130.00",
+                "image_url":"./product_images/pexels-melvin-buezo-2529157.jpg",
+            },
+            {
+                "name":"Ricky Jackets",
+                "price":"320.00",
+                "image_url":"./product_images/pexels-ricky-esquivel-1868735.jpg",
+            },
+            {
+                "name":"Terje Shoes",
+                "price":"120.00",
+                "image_url":"./product_images/pexels-terje-sollie-313705.jpg",
+            }
+        ],
+        "DIY" : [
+            {
+                "name":"Bkinsety 12V Indicator Light",
+                "price":"20.00",
+                "image_url":"./product_images/Bkinsety 10pcs 12V LED Indicator Light 6mm.jpg",
+            },
+            {
+                "name":"Tower Extension Lead",
+                "price":"100.00",
+                "image_url":"./product_images/Tower Extension Lead with 3 USB Slots.jpg",
+            },
+            {
+                "name":"6 pc Screwdriver Set",
+                "price":"20.00",
+                "image_url":"./product_images/Rolson 28573 6 pc Screwdriver Set .jpg",
+            }
+        ]
+    };
+    const kitchenProducts = products["Kitchen Utensils"].sort();
+    const Fashion = products["Fashion"].sort();
+    const DIY = products["DIY"].sort()
+    const allProducts = [kitchenProducts, Fashion, DIY].sort();
+    allProducts.forEach((category) => {
+            category.forEach((product) => {
+            // console.log(product); return;
+            document.write(`
+            <div class="card">
+                    <div class="image">
+                        <img src="${product.image_url}" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="left">
+                            <h1 class="title">${product.name}</h1>
+                            <p class="description">$${product.price}</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                </div>
+            `);
+        });
+    });
+</script>
             <div class="card">
                 <div class="image">
                     <img src="" alt="">
