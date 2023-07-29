@@ -6,15 +6,27 @@
     <link rel="stylesheet" href="./fontawesome-free-6.4.0-web/css/all.css">
     <title>Product</title>
     <style>
+        @font-face {
+            font-family: "Poppins-Bold";
+            src: url("./google fonts/Poppins/poppins-bold.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Lugrasimo";
+            src: url("./google fonts/Lugrasimo/Lugrasimo-Regular.ttf") format("truetype");
+        }
+
         body {
             margin: 0;
             padding: 0;
+            font-family: "Lugrasimo";
             box-sizing: border-box;
         }
 
         header {
             padding: 0;
             margin:0;
+            font-family: "Poppins-Bold";
         }
 
         header div.menu {
@@ -60,7 +72,7 @@
         }
 
         header div.banner {
-            background:url("./images/pexels-igor-ovsyannykov-205961.jpg") no-repeat center;
+            background:url("./images/pexels-igor-ovsyannykov-205961.jpg") repeat-x center;
             margin-top:10vh;
         }
 
@@ -156,15 +168,17 @@
             width:80%;
             float:left;
             padding: .5rem;
+            padding-right: 1rem;
+            padding-top:0;
         }
 
         div.main div.products div.card div.details div.left h1.title {
-            font-size:1.2rem;
+            font-size:1rem;
             margin-bottom:.5rem;
         }
 
         div.main div.products div.card div.details div.left p.description {
-            font-size:1rem;
+            font-size:.8rem;
             margin-top:0rem;
         }
 
@@ -212,6 +226,7 @@
             </ul>
         </div>
         <div class="banner">
+            <!-- <img src="images/pexels-igor-ovsyannykov-205961.jpg" alt="courtsey pexels-igor-ovsyannykov"> -->
             <h1>All Products</h1>
         </div>
     </header>
@@ -319,6 +334,16 @@
                 "image_url":"./product_images/Tower Extension Lead with 3 USB Slots.jpg",
             },
             {
+                "name":"Extension Lead",
+                "price":"80.00",
+                "image_url":"./product_images/Extension Lead with 4 USB Slots .jpg",
+            },
+            {
+                "name":"Precision Screwdriver Set, 6 Piece ",
+                "price":"20.00",
+                "image_url":"./product_images/DURATOOL D03446 Precision Screwdriver Set, 6 Piece .jpg",
+            },
+            {
                 "name":"6 pc Screwdriver Set",
                 "price":"20.00",
                 "image_url":"./product_images/Rolson 28573 6 pc Screwdriver Set .jpg",
@@ -351,7 +376,7 @@
         });
     });
 </script>
-            <div class="card">
+            <!-- <div class="card">
                 <div class="image">
                     <img src="" alt="">
                 </div>
@@ -420,7 +445,7 @@
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
         
