@@ -55,18 +55,31 @@
             cursor: pointer;
             background-color: white;
             height:100%;
+            /* padding:1rem; */
+            font-weight: bold;
+        }
+
+        header div.menu ul li a {
+            text-decoration: none;
+            width:100%;
+            /* margin:0 2rem;
+            margin-left: 0rem; */
+            color:black;
+            cursor: pointer;
+            background-color: transparent;
+            height:100%;
             padding:1rem;
             font-weight: bold;
         }
 
-        header div.menu ul li:hover {
+        header div.menu ul li a:hover {
             background-color: #1b821b;
             border-bottom:5px solid yellow;
             color:white !important;
             transition: background-color border .5s ease-in-out;
         }
 
-        header div.menu ul li.active {
+        header div.menu ul li a.active {
             border-bottom:5px solid yellow;
             color:#1b821b;
         }
@@ -220,11 +233,11 @@
     <header>
         <div class="menu">
             <ul>
-                <li class="active">All products</li>
-                <li>Fashion</li>
-                <li>Electronics</li>
-                <li>Kitchen Utensils</li>
-                <li>DIY</li>
+                <li><a href="product_page.html" class="active all_products">All products</a></li>
+                <li><a href="product_page.html?page=fashion" class="fashion">Fashion</a></li>
+                <li><a href="product_page.html?page=electronics" class="electronics">Electronics</a></li>
+                <li><a href="product_page.html?page=kitchen utensils" class="kitchen_utensils">Kitchen Utensils</a></li>
+                <li><a href="product_page.html?page=diy" class="diy">DIY</a></li>
             </ul>
         </div>
         <div class="banner">
@@ -362,6 +375,14 @@
     const DIY = products["DIY"].sort()
     const allProducts = [kitchenProducts, Fashion, DIY].sort();
     console.log(page);
+    document.querySelector('.active').classList.remove('active');
+    
+    if(page=='') {
+        document.querySelector('.all_products').classList.add('active')
+    } else {
+        if(page=="kitchen utensils") page="kitchen_utensils";console.log(page)
+        document.querySelector(`.${page}`).classList.add('active');
+    }
 
     if(page=="kitchen utensils") {
         kitchenProducts.forEach((product) => {
@@ -447,7 +468,7 @@
             });
         });
     }
-    
+        
 </script>
             <!-- <div class="card">
                 <div class="image">
@@ -527,5 +548,9 @@
     <footer class="footer">
         
     </footer>
+    
+    <script>
+        
+    </script>
 </body>
 </html>
