@@ -168,18 +168,20 @@
             width:80%;
             float:left;
             padding: .5rem;
-            padding-right: 1rem;
-            padding-top:0;
+            /* padding-right: 1rem;
+            padding-top:0; */
         }
 
         div.main div.products div.card div.details div.left h1.title {
             font-size:1rem;
             margin-bottom:.5rem;
+            padding-left:.5rem;
         }
 
         div.main div.products div.card div.details div.left p.description {
             font-size:.8rem;
             margin-top:0rem;
+            padding-left:.5rem;
         }
 
         div.main div.products div.card div.details div.right {
@@ -350,13 +352,18 @@
             }
         ]
     };
+    console.log(window.location.search);
+    const params = new URLSearchParams(window.location.search);
+    // console.log(params.get("page").toString() == "Fashion");
+    var page = '';
+    if(params != '' && params.hasOwnProperty('page')) page = params.get("page").toLowerCase();
     const kitchenProducts = products["Kitchen Utensils"].sort();
     const Fashion = products["Fashion"].sort();
     const DIY = products["DIY"].sort()
     const allProducts = [kitchenProducts, Fashion, DIY].sort();
-    allProducts.forEach((category) => {
-            category.forEach((product) => {
-            // console.log(product); return;
+
+    if(page=="kitchen utensils") {
+        kitchenProducts.forEach((product) => {
             document.write(`
             <div class="card">
                     <div class="image">
@@ -374,7 +381,72 @@
                 </div>
             `);
         });
-    });
+    }
+
+    if(page=="fashion") {
+        Fashion.forEach((product) => {
+            document.write(`
+            <div class="card">
+                    <div class="image">
+                        <img src="${product.image_url}" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="left">
+                            <h1 class="title">${product.name}</h1>
+                            <p class="description">$${product.price}</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                </div>
+            `);
+        });
+    }
+    if(page=="diy") {
+        DIY.forEach((product) => {
+            document.write(`
+            <div class="card">
+                    <div class="image">
+                        <img src="${product.image_url}" alt="">
+                    </div>
+                    <div class="details">
+                        <div class="left">
+                            <h1 class="title">${product.name}</h1>
+                            <p class="description">$${product.price}</p>
+                        </div>
+                        <div class="right">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                </div>
+            `);
+        });
+    }
+
+    if(page == '' || page == undefined) {
+        allProducts.forEach((category) => {
+            category.forEach((product) => {
+                document.write(`
+                <div class="card">
+                        <div class="image">
+                            <img src="${product.image_url}" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="left">
+                                <h1 class="title">${product.name}</h1>
+                                <p class="description">$${product.price}</p>
+                            </div>
+                            <div class="right">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+        });
+    }
+    
 </script>
             <!-- <div class="card">
                 <div class="image">
