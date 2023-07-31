@@ -373,14 +373,14 @@
     const Fashion = products["Fashion"].sort();
     const DIY = products["DIY"].sort()
     const allProducts = [kitchenProducts, Fashion, DIY].sort();
-    console.log(page);
+
     document.querySelector('.active').classList.remove('active');
-    
     if(page=='') {
         document.querySelector('.all_products').classList.add('active')
     } else {
-        if(page=="kitchen utensils") page="kitchen_utensils";console.log(page)
-        document.querySelector(`.${page}`).classList.add('active');
+        link = page;
+        if(page=="kitchen utensils") link="kitchen_utensils";console.log(page)
+        document.querySelector(`.${link}`).classList.add('active');
     }
 
     if(page=="kitchen utensils") {
@@ -547,9 +547,5 @@
     <footer class="footer">
         
     </footer>
-    
-    <script>
-        
-    </script>
 </body>
 </html>
