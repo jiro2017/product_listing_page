@@ -241,7 +241,7 @@
             </ul>
         </div>
         <div class="banner">
-            <h1>All Products</h1>
+            <h1 class="header">All Products</h1>
         </div>
     </header>
     <div class="main">
@@ -368,19 +368,21 @@
     page = '';
     if(params != '' && params.has('page')) {
         page = params.get("page").toLowerCase().split("=")[0];
-    }
-    const kitchenProducts = products["Kitchen Utensils"].sort();
+    } console.log(page);
+    const kitchenProducts = products["Kitchen Utensils"].sort((a,b) => a*Math.random() > b*Math.random());
     const Fashion = products["Fashion"].sort();
     const DIY = products["DIY"].sort()
     const allProducts = [kitchenProducts, Fashion, DIY].sort();
 
     document.querySelector('.active').classList.remove('active');
     if(page=='') {
-        document.querySelector('.all_products').classList.add('active')
+        document.querySelector('.all_products').classList.add('active');
+        document.querySelector('.header').innerHTML = "All Products".toUpperCase();
     } else {
         link = page;
-        if(page=="kitchen utensils") link="kitchen_utensils";console.log(page)
+        if(page=="kitchen utensils") link="kitchen_utensils";
         document.querySelector(`.${link}`).classList.add('active');
+        document.querySelector(".header").innerHTML = page.toUpperCase();
     }
 
     if(page=="kitchen utensils") {
