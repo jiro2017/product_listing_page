@@ -80,7 +80,7 @@
         }
 
         header div.menu ul li a.active {
-            border-bottom:5px solid yellow;
+            border-bottom:5px solid green; /** yellow; **/
             color:#1b821b;
         }
 
@@ -371,7 +371,7 @@
     } console.log(page);
     const kitchenProducts = products["Kitchen Utensils"].sort((a,b) => a*Math.random() > b*Math.random());
     const Fashion = products["Fashion"].sort();
-    const DIY = products["DIY"].sort()
+    const DIY = products["DIY"].sort();
     const allProducts = [kitchenProducts, Fashion, DIY].sort();
 
     document.querySelector('.active').classList.remove('active');
