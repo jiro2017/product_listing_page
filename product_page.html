@@ -370,7 +370,7 @@
     page = '';
     if(params != '' && params.has('page')) {
         page = params.get("page").toLowerCase().split("=")[0];
-    } console.log(page);
+    }
     const kitchenProducts = products["Kitchen Utensils"].sort((a,b) => a*Math.random() > b*Math.random());
     const Fashion = products["Fashion"].sort();
     const DIY = products["DIY"].sort();
