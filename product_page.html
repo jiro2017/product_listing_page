@@ -167,7 +167,7 @@
         }
 
         div.main div.products div.card div.image img {
-            width: 95%;
+            width: 92%;
             height: 100%;
         }
 
@@ -228,6 +228,53 @@
 
         footer.footer {
             background-color: purple;
+        }
+
+        /* Tablet customizations */
+        @media(max-width: 1126px) {
+            body {
+                font-size: .7rem;
+            }
+
+            div.main div.products {
+                grid-template-columns: repeat(4,1fr);
+            }
+            div.main div.products div.card {
+                width:190px;
+                height:250px;
+                margin-left:0;
+            }
+
+            div.main div.products div.card div.details div.left {
+                margin:0;
+                padding-left:.2rem;
+            }
+
+            div.main div.products div.card div.details div.left h1.title {
+                font-size:.56rem;
+                margin:0;
+                padding-left:0;
+            }
+
+            div.main div.products div.card div.details div.left p.description {
+                padding-left:0;
+                font-size: .6rem;
+            }
+
+            div.main div.products div.card div.details div.right i.fa-shopping-cart {
+                font-size: 1rem;
+            }
+        }
+
+        @media(max-width: 1126px) {
+            div.main div.products {
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+
+        /* mobile phones customizations */
+        @media(max-width: 450px) {
+
         }
     </style>
 </head>
@@ -371,6 +418,7 @@
     if(params != '' && params.has('page')) {
         page = params.get("page").toLowerCase().split("=")[0];
     }
+
     const kitchenProducts = products["Kitchen Utensils"].sort((a,b) => a*Math.random() > b*Math.random());
     const Fashion = products["Fashion"].sort();
     const DIY = products["DIY"].sort();
@@ -551,5 +599,6 @@
     <footer class="footer">
         
     </footer>
+    <script src="./testscript.js"></script>
 </body>
 </html>
